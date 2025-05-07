@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:my_portfolio_website/responsive_layout/mobile_screen_layout.dart';
 import 'package:my_portfolio_website/responsive_layout/responsive.dart';
 import 'package:my_portfolio_website/responsive_layout/web_screen_layout.dart';
-import 'package:my_portfolio_website/screens/project_screen.dart';
-import 'package:my_portfolio_website/utilities/colors.dart';
 
 void main() {
   runApp(const MyApp());

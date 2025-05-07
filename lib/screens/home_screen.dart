@@ -19,7 +19,7 @@ class _HomeScreenState extends State<HomeScreen> {
       appBar: AppBar(
         iconTheme: IconThemeData(color: Colors.white),
         title: Text(
-          'Welcome ',
+          'Home ',
           style: TextStyle(
               fontSize: 22, fontWeight: FontWeight.bold, color: Colors.white),
         ),
@@ -66,7 +66,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 Icons.home,
                 color: Colors.white,
               ),
-              title: Text(
+              title: const Text(
                 'Home',
                 style: TextStyle(color: Colors.white),
               ),
@@ -82,7 +82,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             ListTile(
               leading: Icon(Icons.person, color: Colors.white),
-              title: Text(
+              title: const Text(
                 'About Me',
                 style: TextStyle(color: Colors.white),
               ),
@@ -97,8 +97,11 @@ class _HomeScreenState extends State<HomeScreen> {
               },
             ),
             ListTile(
-              leading: Icon(Icons.person, color: Colors.white),
-              title: Text(
+              leading: Icon(
+                Icons.engineering,
+                color: Colors.white,
+              ),
+              title: const Text(
                 'My Projects',
                 style: TextStyle(color: Colors.white),
               ),
@@ -114,7 +117,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             ListTile(
               leading: Icon(Icons.phone, color: Colors.white),
-              title: Text(
+              title: const Text(
                 'Contact',
                 style: TextStyle(color: Colors.white),
               ),
@@ -138,15 +141,10 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            CircleAvatar(
-              backgroundImage: AssetImage('assets/images/prof_dev.jpg'),
-              radius: 80,
-            ),
-            SizedBox(height: 40),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
+                const Text(
                   'Hello   ',
                   style: TextStyle(
                     fontSize: 20,
@@ -160,7 +158,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ],
             ),
             SizedBox(height: 10),
-            Text(
+            const Text(
               "I'm Bukunmi Ogunsola,",
               style: TextStyle(
                   fontSize: 27,
@@ -175,105 +173,53 @@ class _HomeScreenState extends State<HomeScreen> {
                 color: Colors.white,
               ),
             ),
-            SizedBox(height: 20),
+            SizedBox(height: 30),
+            CircleAvatar(
+              backgroundImage: const AssetImage('assets/images/prof_dev.jpg'),
+              radius: 80,
+            ),
+            SizedBox(height: 30),
             RichText(
               text: TextSpan(
                 style: TextStyle(
                   fontSize: 16,
-                  color: Colors.grey.shade300,
+                  color: Colors.white,
                 ),
                 children: [
                   TextSpan(
                       text:
-                          "I build high quality mobile and web apps, highly skilled at problem solving"),
+                          "I build high quality mobile and web apps,I'm highly skilled at problem solving"),
                   TextSpan(
                       text:
-                          ".I'm available for remote, contracts and freelance work involving mobile and web applications"),
+                          ". I'm available for remote works, contracts and freelance work involving mobile and web applications"),
                 ],
               ),
             ),
-            SizedBox(height: 40),
-            Row(
-              children: [
-                InkWell(
-                  onTap: () async {
-                    final url = Uri.parse(
-                        'https://www.linkedin.com/in/bukunmi-ogunsola-9a795a24a/');
-                    if (await canLaunchUrl(url)) {
-                      await launchUrl(url,
-                          mode: LaunchMode.externalApplication);
-                    } else {
-                      throw 'Could not launch $url';
-                    }
-                  },
-                  child: SvgPicture.asset(
-                    'assets/logo/linkedin.svg',
-                    height: 35,
-                    colorFilter:
-                        ColorFilter.mode(Colors.white, BlendMode.srcATop),
-                  ),
+            SizedBox(height: 30),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) {
+                    return ContactScreen();
+                  }),
+                );
+              },
+              style: ElevatedButton.styleFrom(
+                elevation: 3,
+                minimumSize: Size(double.infinity, 35),
+                backgroundColor: Colors.white,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12),
                 ),
-                SizedBox(width: 15),
-                InkWell(
-                  onTap: () async {
-                    final url = Uri.parse('https://x.com/BukunmiOgunsol');
-                    if (await canLaunchUrl(url)) {
-                      launchUrl(url, mode: LaunchMode.externalApplication);
-                    } else {
-                      throw 'Could not launch $url';
-                    }
-                  },
-                  child: SvgPicture.asset(
-                    'assets/logo/x.svg',
-                    height: 23,
-                    colorFilter:
-                        ColorFilter.mode(Colors.white, BlendMode.srcATop),
-                  ),
-                ),
-                SizedBox(width: 18),
-                ElevatedButton(
-                  onPressed: () async {
-                    final Uri emailLaunchUri = Uri(
-                      scheme: 'mailto',
-                      path: 'bogunsola38@gmail.com',
-                      query: Uri.encodeFull(
-                        'subject=Contact from Portfolio Website&body=Hi there',
-                      ),
-                    );
-                    if (await canLaunchUrl(emailLaunchUri)) {
-                      await launchUrl(
-                        emailLaunchUri,
-                      );
-                    } else {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(
-                          content: Text('Could not launch $emailLaunchUri'),
-                        ),
-                      );
-                    }
-                  },
-                  style: ElevatedButton.styleFrom(
-                    elevation: 3,
-                    backgroundColor: Colors.white,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                  ),
-                  child: Row(
-                    children: [
-                      SvgPicture.asset(
-                        'assets/logo/gmail.svg',
-                        height: 17,
-                      ),
-                      Text(
-                        '    Gmail',
-                        style: TextStyle(color: Colors.black, fontSize: 16),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
+              ),
+              child: Text(
+                'Hire Me',
+                style: TextStyle(
+                    fontSize: 22,
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold),
+              ),
+            )
           ],
         ),
       ),

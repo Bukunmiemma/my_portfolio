@@ -30,7 +30,7 @@ class _ProjectCardState extends State<ProjectCard> {
       margin: EdgeInsets.all(10),
       padding: EdgeInsets.symmetric(horizontal: 16),
       decoration: BoxDecoration(
-        color: Colors.grey.shade300,
+        color: Colors.white,
         borderRadius: BorderRadius.circular(20),
       ),
       child: Column(
@@ -43,7 +43,7 @@ class _ProjectCardState extends State<ProjectCard> {
               style: TextStyle(
                   fontSize: 30,
                   fontWeight: FontWeight.bold,
-                  color: Colors.black),
+                  color: Colors.blue),
             ),
           ),
           SizedBox(height: 10),
@@ -59,10 +59,11 @@ class _ProjectCardState extends State<ProjectCard> {
                 child: ElevatedButton(
                   onPressed: widget.onSitePressed,
                   style: ElevatedButton.styleFrom(
+                      elevation: 3,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      backgroundColor: Colors.blueAccent),
+                      backgroundColor: Colors.blue),
                   child: Text(
                     'See App',
                     style: TextStyle(fontSize: 15, color: Colors.white),
@@ -74,10 +75,11 @@ class _ProjectCardState extends State<ProjectCard> {
                 child: ElevatedButton(
                   onPressed: widget.onRepoPressed,
                   style: ElevatedButton.styleFrom(
+                      elevation: 3,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      backgroundColor: Colors.blueAccent),
+                      backgroundColor: Colors.blue),
                   child: Text(
                     'See Repo',
                     style: TextStyle(fontSize: 15, color: Colors.white),
