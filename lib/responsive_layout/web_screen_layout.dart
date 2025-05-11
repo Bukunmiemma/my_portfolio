@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio_website/screens/home_screen.dart';
 import 'package:my_portfolio_website/web_screens/web_home_screen.dart';
 
 class WebScreenLayout extends StatelessWidget {

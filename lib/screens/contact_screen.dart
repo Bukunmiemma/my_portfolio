@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:my_portfolio_website/web_screens/web_about_screen.dart';
-import 'package:my_portfolio_website/web_screens/web_home_screen.dart';
 import 'package:my_portfolio_website/widget/snack_bar.dart';
 import 'package:url_launcher/url_launcher.dart';
 
@@ -31,7 +29,6 @@ class ContactScreen extends StatelessWidget {
       ),
       body: LayoutBuilder(
         builder: (context, constraints) {
-          bool isMobile = constraints.maxWidth < 600;
           if (constraints.maxWidth > 650) {
             return SingleChildScrollView(
               child: Center(
